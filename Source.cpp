@@ -3,7 +3,15 @@
 
 int main()
 {
-	Time time(23, 59, 0);
+
+	int Hours, Minutes, Seconds;
+
+	std::cout << "Enter Hours :";   std::cin >> Hours;
+	std::cout << "Enter Minutes :"; std::cin >> Minutes;
+	std::cout << "Enter Seconds :"; std::cin >> Seconds;
+
+
+	Time time(Hours, Minutes, Seconds);
 
 	if (time.isDinnerTime())
 	{
@@ -31,5 +39,3 @@ int main()
 	time.~Time();
 
 }
-
-
