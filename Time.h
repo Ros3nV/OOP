@@ -115,7 +115,7 @@ public:
 			hoursToMidnight++;
 		}
 
-		if (hoursToMidnight > 24)
+		if (hoursToMidnight > 23)
 		{
 			hoursToMidnight = 0;
 		}
@@ -156,7 +156,7 @@ public:
 
 		newTime.setNewTime(newTime,6, 0, 0);
 
-		if ((compare(newTime) == 0 || compare(newTime) == 1))
+		if ((compare(newTime) == 0 || compare(newTime) == -1))
 		{
 			return true;
 		}
@@ -219,4 +219,3 @@ public:
 	}
 	
 };
-
