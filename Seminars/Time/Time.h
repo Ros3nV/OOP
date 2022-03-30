@@ -1,5 +1,5 @@
 #pragma once
-#ifndef  TIME_H
+#ifndef TIME_H
 #define TIME_H
 #endif
 
@@ -13,28 +13,6 @@ private:
 	int convertToSeconds(int hours, int minutes, int seconds)const
 	{
 		return hours * 3600 + minutes * 60 + seconds;
-	}
-
-	int compare(Time secondTime)const
-	{
-		int firstTimeToSeconds = convertToSeconds(this->hours, this->minutes, this->seconds);
-		int secondTimeToSeconds = convertToSeconds(secondTime.hours, secondTime.minutes, secondTime.seconds);
-
-		if (firstTimeToSeconds > secondTimeToSeconds)
-		{
-			return 1;
-		}
-		else
-		{
-			if (firstTimeToSeconds < secondTimeToSeconds)
-			{
-				return -1;
-			}
-			else
-			{
-				return 0;
-			}
-		}
 	}
 
 	void setNewTime(Time& newTime, int hours, int minutes, int seconds)
@@ -93,6 +71,28 @@ public:
 	~Time()
 	{
 	
+	}
+
+	int compare( Time secondTime)const
+	{
+		int firstTimeToSeconds = convertToSeconds(this->hours, this->minutes, this->seconds);
+		int secondTimeToSeconds = convertToSeconds(secondTime.hours, secondTime.minutes, secondTime.seconds);
+
+		if (firstTimeToSeconds > secondTimeToSeconds)
+		{
+			return 1;
+		}
+		else
+		{
+			if (firstTimeToSeconds < secondTimeToSeconds)
+			{
+				return -1;
+			}
+			else
+			{
+				return 0;
+			}
+		}
 	}
 
 	void getToMidnight()const
