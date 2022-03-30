@@ -3,7 +3,6 @@
 
 int main()
 {
-
 	int Hours, Minutes, Seconds;
 
 	std::cout << "Enter Hours :";   std::cin >> Hours;
@@ -32,10 +31,12 @@ int main()
 	}
 
 
+	Time test(10, 24, 1);
+
+
+	std::cout << time.compare(test);
+
 	time.getToMidnight();
 
 	time.print(true);
-
-	time.~Time();
-
 }
