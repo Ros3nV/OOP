@@ -100,11 +100,12 @@ size_t DateClass::convertToDays() const
 
 	if (this->year > 1916)
 	{
-		return this->day + this->monthsToDays() + (numberOfLeapYears - 1) * 366 + (this->year - numberOfLeapYears) * 365 - 365 - 31 - 1 - 343;
+		return this->day + this->monthsToDays() + (numberOfLeapYears - 1) * 366 + (this->year - numberOfLeapYears) * 365 - 397 - 343;
+		//Махам от високосните години 1916, и директно смятам днитe и, които са 343, също така махам датата 1.1.1, която се равнява на 397, защото алгоритъма ще ги сметне и тях
 	}
 	if (this->year < 1916)
 	{
-		return this->day + this->monthsToDays() + (numberOfLeapYears - 1) * 366 + (this->year - numberOfLeapYears) * 365 - 365 - 31 - 1;
+		return this->day + this->monthsToDays() + (numberOfLeapYears - 1) * 366 + (this->year - numberOfLeapYears) * 365 -397;
 	}
 
 	size_t MissingDaysOf1916 = 0;
